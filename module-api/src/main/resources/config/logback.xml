@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>./logs/client.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>./logs/client.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy
+					class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>20MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+			<maxHistory>10</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+		<!--<filter class="ch.qos.logback.classic.filter.LevelFilter">&lt;!&ndash; 只打印ERROR日志 &ndash;&gt;-->
+			<!--<level>ERROR</level>-->
+			<!--<onMatch>ACCEPT</onMatch>-->
+			<!--<onMismatch>DENY</onMismatch>-->
+		<!--</filter>-->
+	</appender>
+	<!--<appender name="async-stdout" class="ch.qos.logback.classic.AsyncAppender">-->
+		<!--<appender-ref ref="stdout" />-->
+		<!--<includeCallerData>true</includeCallerData>-->
+	<!--</appender>-->
+	<!--<appender name="async-rollingFile" class="ch.qos.logback.classic.AsyncAppender">-->
+		<!--<appender-ref ref="rollingFile" />-->
+		<!--<includeCallerData>true</includeCallerData>-->
+	<!--</appender>-->
+
+
+	<logger name="jdbc.sqltiming" level="debug" />
+	<logger name="com.ibatis" level="debug" />
+	<logger name="com.ibatis.common.jdbc.SimpleDataSource" level="debug" />
+	<logger name="com.ibatis.common.jdbc.ScriptRunner" level="debug" />
+	<logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate"
+			level="debug" />
+	<logger name="java.sql.Connection" level="debug" />
+	<logger name="java.sql.Statement" level="debug" />
+	<logger name="java.sql.PreparedStatement" level="debug" />
+	<logger name="java.sql.ResultSet" level="debug" />
+	<logger name="org.quartz.impl.jdbcjobstore.JobStoreTX" level="debug" />
+	<logger name="org.quartz.impl.jdbcjobstore.StdRowLockSemaphore" level="debug" />
+	<logger name="org.springframework.amqp.rabbit.core.RabbitTemplate" level="debug" />
+	<logger name="org.springframework.amqp.rabbit.listener.BlockingQueueConsumer" level="debug" />
+	<root level="info	">
+		<appender-ref ref="stdout" />
+		<appender-ref ref="rollingFile" />
+	</root>
+</configuration>

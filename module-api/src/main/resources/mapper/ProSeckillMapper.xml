@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.farm.xzfarm.dao.ProSeckillMapper" >
+  <resultMap id="BaseResultMap" type="com.farm.xzfarm.beans.model.ProSeckill" >
+    <id column="seckill_id" property="seckillId" jdbcType="INTEGER" />
+    <result column="product_id" property="productId" jdbcType="INTEGER" />
+    <result column="product_type" property="productType" jdbcType="INTEGER" />
+    <result column="spec_id" property="specId" jdbcType="INTEGER" />
+    <result column="price" property="price" jdbcType="DOUBLE" />
+    <result column="promo_price" property="promoPrice" jdbcType="DOUBLE" />
+    <result column="store_num" property="storeNum" jdbcType="INTEGER" />
+    <result column="saled_num" property="saledNum" jdbcType="INTEGER" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    seckill_id, product_id, product_type, spec_id, price, promo_price, store_num, saled_num, 
+    start_time, end_time, status, create_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from pro_seckill
+    where seckill_id = #{seckillId,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from pro_seckill
+    where seckill_id = #{seckillId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.farm.xzfarm.beans.model.ProSeckill" >
+    insert into pro_seckill (seckill_id, product_id, product_type, 
+      spec_id, price, promo_price, 
+      store_num, saled_num, start_time, 
+      end_time, status, create_time
+      )
+    values (#{seckillId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{productType,jdbcType=INTEGER}, 
+      #{specId,jdbcType=INTEGER}, #{price,jdbcType=DOUBLE}, #{promoPrice,jdbcType=DOUBLE}, 
+      #{storeNum,jdbcType=INTEGER}, #{saledNum,jdbcType=INTEGER}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.farm.xzfarm.beans.model.ProSeckill" >
+    insert into pro_seckill
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="seckillId != null" >
+        seckill_id,
+      </if>
+      <if test="productId != null" >
+        product_id,
+      </if>
+      <if test="productType != null" >
+        product_type,
+      </if>
+      <if test="specId != null" >
+        spec_id,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="promoPrice != null" >
+        promo_price,
+      </if>
+      <if test="storeNum != null" >
+        store_num,
+      </if>
+      <if test="saledNum != null" >
+        saled_num,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="endTime != null" >
+        end_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="seckillId != null" >
+        #{seckillId,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null" >
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="productType != null" >
+        #{productType,jdbcType=INTEGER},
+      </if>
+      <if test="specId != null" >
+        #{specId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="promoPrice != null" >
+        #{promoPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="storeNum != null" >
+        #{storeNum,jdbcType=INTEGER},
+      </if>
+      <if test="saledNum != null" >
+        #{saledNum,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.farm.xzfarm.beans.model.ProSeckill" >
+    update pro_seckill
+    <set >
+      <if test="productId != null" >
+        product_id = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="productType != null" >
+        product_type = #{productType,jdbcType=INTEGER},
+      </if>
+      <if test="specId != null" >
+        spec_id = #{specId,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="promoPrice != null" >
+        promo_price = #{promoPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="storeNum != null" >
+        store_num = #{storeNum,jdbcType=INTEGER},
+      </if>
+      <if test="saledNum != null" >
+        saled_num = #{saledNum,jdbcType=INTEGER},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null" >
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where seckill_id = #{seckillId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.farm.xzfarm.beans.model.ProSeckill" >
+    update pro_seckill
+    set product_id = #{productId,jdbcType=INTEGER},
+      product_type = #{productType,jdbcType=INTEGER},
+      spec_id = #{specId,jdbcType=INTEGER},
+      price = #{price,jdbcType=DOUBLE},
+      promo_price = #{promoPrice,jdbcType=DOUBLE},
+      store_num = #{storeNum,jdbcType=INTEGER},
+      saled_num = #{saledNum,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where seckill_id = #{seckillId,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="selectByPrimaryKeyAndStatus" resultMap="BaseResultMap" parameterType="java.util.Map" >
+    select 'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from pro_seckill
+    where seckill_id = #{seckillId,jdbcType=INTEGER}
+    AND  status  = #{status,jdbcType=INTEGER}
+  </select>
+
+
+  <resultMap id="ProSeckillVOResultMap" type="com.farm.xzfarm.beans.VO.seckill.ProSeckillVO" extends="BaseResultMap">
+    <result column="image_url" property="imageUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  <!-- 获取即将开始和正在进行的 -->
+  <select id="queryDoingSeckillList" resultMap="ProSeckillVOResultMap" parameterType="java.util.Map">
+      select pro_seckill.*,pro_images.image_url from pro_seckill  LEFT JOIN pro_images ON pro_seckill.seckill_id = pro_images.object_id
+      where pro_images.image_type = 1
+          AND  pro_seckill.end_time > #{searchTime}
+          AND pro_seckill.status  &lt; 3
+  </select>
+
+  <resultMap id="ProSeckillDetailVOResultMap" type="com.farm.xzfarm.beans.VO.seckill.ProSeckillDetailVO" extends="BaseResultMap">
+    <result column="product_name" property="productName" jdbcType="VARCHAR" />
+    <result column="spec_id" property="specId" jdbcType="INTEGER" />
+    <result column="spec_name" property="specName" jdbcType="VARCHAR" />
+    <result column="spec_sum" property="specSum" jdbcType="INTEGER" />
+  </resultMap>
+  <select id="getProductSeckillDetailVO" resultMap="ProSeckillDetailVOResultMap" parameterType="java.util.Map">
+      select pro_seckill.*,
+      pro_product.product_name,pro_product.product_code,
+      pro_spec.spec_name,pro_spec.spec_sum
+      from pro_seckill,pro_product,pro_spec
+      where pro_seckill.product_id = pro_product.id
+      AND pro_seckill.spec_id = pro_spec.id
+      AND pro_seckill.product_type = 1
+      AND pro_seckill.`status` &lt; 3
+      AND pro_seckill.store_num &gt;= 0
+      AND pro_seckill.end_time &gt;= #{searchTime}
+      AND pro_seckill.seckill_id = #{seckillId}
+  </select>
+
+
+
+  <select id="getPackageSeckillDetailVO" resultMap="ProSeckillDetailVOResultMap" parameterType="java.util.Map">
+    select
+    pro_seckill.*,
+    pro_package.package_name product_name,pro_package.package_code product_code
+    from pro_seckill,pro_package
+    where pro_seckill.product_id = pro_package.id
+    AND pro_seckill.product_type = 2
+    AND pro_seckill.`status` &lt; 3
+    AND pro_seckill.store_num &gt;= 0
+    AND pro_seckill.end_time &gt;= #{searchTime}
+    AND pro_seckill.seckill_id = #{seckillId}
+  </select>
+
+
+</mapper>
