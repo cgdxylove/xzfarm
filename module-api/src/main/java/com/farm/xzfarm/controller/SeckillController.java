@@ -1,13 +1,12 @@
 package com.farm.xzfarm.controller;
 
+import beans.constant.CommonConstant;
+import beans.constant.SeckillConstant;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.farm.xzfarm.beans.VO.seckill.ProSeckillDetailVO;
 import com.farm.xzfarm.beans.VO.seckill.ProSeckillVO;
 import com.farm.xzfarm.beans.WebResponse;
-import com.farm.xzfarm.beans.constant.CommonConstant;
-import com.farm.xzfarm.beans.constant.ProductConstant;
-import com.farm.xzfarm.beans.constant.SeckillConstant;
 import com.farm.xzfarm.beans.model.ProSeckill;
 import com.farm.xzfarm.service.ProSeckillService;
 import com.farm.xzfarm.service.cache.CacheService;

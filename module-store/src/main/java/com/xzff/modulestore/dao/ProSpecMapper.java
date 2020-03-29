@@ -1,6 +1,7 @@
 package com.xzff.modulestore.dao;
 
-import com.farm.xzfarm.beans.model.ProSpec;
+
+import com.xzff.modulestore.beans.model.ProSpec;
 
 public interface ProSpecMapper {
     int deleteByPrimaryKey(Integer id);

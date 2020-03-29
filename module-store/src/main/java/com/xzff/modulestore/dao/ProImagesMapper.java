@@ -1,6 +1,7 @@
 package com.xzff.modulestore.dao;
 
-import com.farm.xzfarm.beans.model.ProImages;
+
+import com.xzff.modulestore.beans.model.ProImages;
 
 import java.util.List;
 

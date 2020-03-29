@@ -1,8 +1,8 @@
 package com.xzff.modulestore.dao;
 
-import com.farm.xzfarm.beans.VO.seckill.ProSeckillDetailVO;
-import com.farm.xzfarm.beans.VO.seckill.ProSeckillVO;
-import com.farm.xzfarm.beans.model.ProSeckill;
+import com.xzff.modulestore.beans.VO.seckill.ProSeckillDetailVO;
+import com.xzff.modulestore.beans.VO.seckill.ProSeckillVO;
+import com.xzff.modulestore.beans.model.ProSeckill;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.Date;

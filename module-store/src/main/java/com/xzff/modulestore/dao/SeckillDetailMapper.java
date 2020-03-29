@@ -1,6 +1,7 @@
 package com.xzff.modulestore.dao;
 
-import com.farm.xzfarm.beans.model.SeckillDetail;
+
+import com.xzff.modulestore.beans.model.SeckillDetail;
 
 public interface SeckillDetailMapper {
     int deleteByPrimaryKey(Integer id);

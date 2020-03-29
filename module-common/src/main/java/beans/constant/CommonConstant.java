@@ -1,4 +1,4 @@
-package constant;
+package beans.constant;
 
 /**
  * 功能描述：

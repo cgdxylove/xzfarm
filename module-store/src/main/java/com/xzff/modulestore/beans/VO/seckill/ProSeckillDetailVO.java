@@ -1,6 +1,7 @@
 package com.xzff.modulestore.beans.VO.seckill;
 
-import com.farm.xzfarm.beans.model.ProSeckill;
+
+import com.xzff.modulestore.beans.model.ProSeckill;
 
 import java.util.List;
 

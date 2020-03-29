@@ -1,7 +1,7 @@
 package com.farm.xzfarm.config;
 
+import beans.constant.RedisConstant;
 import com.alibaba.fastjson.JSON;
-import com.farm.xzfarm.beans.constant.RedisConstant;
 import com.farm.xzfarm.beans.model.ProSeckill;
 import com.farm.xzfarm.dao.ProSeckillMapper;
 import com.farm.xzfarm.service.cache.CacheService;
