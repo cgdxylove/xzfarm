@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.farm.xzfarm.dao.ProSpecMapper" >
-  <resultMap id="BaseResultMap" type="com.farm.xzfarm.beans.model.ProSpec" >
+  <resultMap id="BaseResultMap" type="com.xzff.modulestore.beans.model.ProSpec" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="product_id" property="productId" jdbcType="INTEGER" />
     <result column="spec_name" property="specName" jdbcType="VARCHAR" />
@@ -22,7 +22,7 @@
     delete from pro_spec
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.farm.xzfarm.beans.model.ProSpec" >
+  <insert id="insert" parameterType="com.xzff.modulestore.beans.model.ProSpec" >
     insert into pro_spec (id, product_id, spec_name, 
       spec_sum, status, sort_no
       )
@@ -30,7 +30,7 @@
       #{specSum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{sortNo,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.farm.xzfarm.beans.model.ProSpec" >
+  <insert id="insertSelective" parameterType="com.xzff.modulestore.beans.model.ProSpec" >
     insert into pro_spec
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -73,7 +73,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.farm.xzfarm.beans.model.ProSpec" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzff.modulestore.beans.model.ProSpec" >
     update pro_spec
     <set >
       <if test="productId != null" >
@@ -94,7 +94,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.farm.xzfarm.beans.model.ProSpec" >
+  <update id="updateByPrimaryKey" parameterType="com.xzff.modulestore.beans.model.ProSpec" >
     update pro_spec
     set product_id = #{productId,jdbcType=INTEGER},
       spec_name = #{specName,jdbcType=VARCHAR},

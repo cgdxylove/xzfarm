@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.farm.xzfarm.dao.ProImagesMapper" >
-  <resultMap id="BaseResultMap" type="com.farm.xzfarm.beans.model.ProImages" >
+  <resultMap id="BaseResultMap" type="com.xzff.modulestore.beans.model.ProImages" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="image_url" property="imageUrl" jdbcType="VARCHAR" />
     <result column="object_id" property="objectId" jdbcType="INTEGER" />
@@ -20,13 +20,13 @@
     delete from pro_images
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.farm.xzfarm.beans.model.ProImages" >
+  <insert id="insert" parameterType="com.xzff.modulestore.beans.model.ProImages" >
     insert into pro_images (id, image_url, object_id, 
       image_type)
     values (#{id,jdbcType=INTEGER}, #{imageUrl,jdbcType=VARCHAR}, #{objectId,jdbcType=INTEGER}, 
       #{imageType,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.farm.xzfarm.beans.model.ProImages" >
+  <insert id="insertSelective" parameterType="com.xzff.modulestore.beans.model.ProImages" >
     insert into pro_images
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.farm.xzfarm.beans.model.ProImages" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzff.modulestore.beans.model.ProImages" >
     update pro_images
     <set >
       <if test="imageUrl != null" >
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.farm.xzfarm.beans.model.ProImages" >
+  <update id="updateByPrimaryKey" parameterType="com.xzff.modulestore.beans.model.ProImages" >
     update pro_images
     set image_url = #{imageUrl,jdbcType=VARCHAR},
       object_id = #{objectId,jdbcType=INTEGER},

@@ -1,4 +1,4 @@
-//package com.farm.xzfarm.config;
+package com.xzff.modulestore.config;//package com.farm.xzfarm.config;
 //
 //import beans.constant.RedisConstant;
 //import com.alibaba.fastjson.JSON;

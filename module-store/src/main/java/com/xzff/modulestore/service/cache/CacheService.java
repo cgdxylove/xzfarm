@@ -1,4 +1,4 @@
-package com.farm.xzfarm.service.cache;
+package com.xzff.modulestore.service.cache;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;

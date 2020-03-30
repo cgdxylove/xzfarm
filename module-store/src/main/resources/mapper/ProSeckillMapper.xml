@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.farm.xzfarm.dao.ProSeckillMapper" >
-  <resultMap id="BaseResultMap" type="com.farm.xzfarm.beans.model.ProSeckill" >
+  <resultMap id="BaseResultMap" type="com.xzff.modulestore.beans.model.ProSeckill" >
     <id column="seckill_id" property="seckillId" jdbcType="INTEGER" />
     <result column="product_id" property="productId" jdbcType="INTEGER" />
     <result column="product_type" property="productType" jdbcType="INTEGER" />
@@ -30,7 +30,7 @@
     delete from pro_seckill
     where seckill_id = #{seckillId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.farm.xzfarm.beans.model.ProSeckill" >
+  <insert id="insert" parameterType="com.xzff.modulestore.beans.model.ProSeckill" >
     insert into pro_seckill (seckill_id, product_id, product_type, 
       spec_id, price, promo_price, 
       store_num, saled_num, start_time, 
@@ -42,7 +42,7 @@
       #{endTime,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.farm.xzfarm.beans.model.ProSeckill" >
+  <insert id="insertSelective" parameterType="com.xzff.modulestore.beans.model.ProSeckill" >
     insert into pro_seckill
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="seckillId != null" >
@@ -121,7 +121,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.farm.xzfarm.beans.model.ProSeckill" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.xzff.modulestore.beans.model.ProSeckill" >
     update pro_seckill
     <set >
       <if test="productId != null" >
@@ -160,7 +160,7 @@
     </set>
     where seckill_id = #{seckillId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.farm.xzfarm.beans.model.ProSeckill" >
+  <update id="updateByPrimaryKey" parameterType="com.xzff.modulestore.beans.model.ProSeckill" >
     update pro_seckill
     set product_id = #{productId,jdbcType=INTEGER},
       product_type = #{productType,jdbcType=INTEGER},
@@ -186,7 +186,7 @@
   </select>
 
 
-  <resultMap id="ProSeckillVOResultMap" type="com.farm.xzfarm.beans.VO.seckill.ProSeckillVO" extends="BaseResultMap">
+  <resultMap id="ProSeckillVOResultMap" type="com.xzff.modulestore.beans.VO.seckill.ProSeckillVO" extends="BaseResultMap">
     <result column="image_url" property="imageUrl" jdbcType="VARCHAR" />
   </resultMap>
   <!-- 获取即将开始和正在进行的 -->
@@ -197,7 +197,7 @@
           AND pro_seckill.status  &lt; 3
   </select>
 
-  <resultMap id="ProSeckillDetailVOResultMap" type="com.farm.xzfarm.beans.VO.seckill.ProSeckillDetailVO" extends="BaseResultMap">
+  <resultMap id="ProSeckillDetailVOResultMap" type="com.xzff.modulestore.beans.VO.seckill.ProSeckillDetailVO" extends="BaseResultMap">
     <result column="product_name" property="productName" jdbcType="VARCHAR" />
     <result column="spec_id" property="specId" jdbcType="INTEGER" />
     <result column="spec_name" property="specName" jdbcType="VARCHAR" />

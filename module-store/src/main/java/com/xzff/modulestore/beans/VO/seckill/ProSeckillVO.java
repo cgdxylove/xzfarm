@@ -1,6 +1,7 @@
 package com.xzff.modulestore.beans.VO.seckill;
 
-import com.farm.xzfarm.beans.model.ProSeckill;
+
+import com.xzff.modulestore.beans.model.ProSeckill;
 
 /**
  * 功能描述：
@@ -8,7 +9,7 @@ import com.farm.xzfarm.beans.model.ProSeckill;
  * @Author: chengong
  * @Date: 2020/3/22 15:25
  */
-public class ProSeckillVO extends ProSeckill{
+public class ProSeckillVO extends ProSeckill {
 
     public String imageUrl;
 

@@ -1,6 +1,6 @@
 package com.farm.xzfarm.dao;
 
-import org.apache.ibatis.transaction.Transaction;
+//import org.apache.ibatis.transaction.Transaction;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

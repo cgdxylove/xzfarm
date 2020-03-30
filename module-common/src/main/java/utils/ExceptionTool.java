@@ -1,7 +1,6 @@
-package com.farm.xzfarm.utils;
+package utils;
 
 
-import org.springframework.util.StringUtils;
 
 public class ExceptionTool {
 	/**
@@ -107,7 +106,7 @@ public class ExceptionTool {
 	}
 
 	private static int getMaxLen(String msg, int reqLength) {
-		if (StringUtils.isEmpty(msg)) {
+		if (msg==null||"".equals(msg)) {
 			return 0;
 		}
 		if (msg.length() > reqLength)
