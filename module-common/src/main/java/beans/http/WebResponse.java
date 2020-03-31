@@ -1,4 +1,4 @@
-package com.xzff.modulestore.beans;
+package beans.http;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
@@ -8,7 +8,7 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
 import java.io.IOException;
 import java.util.Properties;
 
-public class  WebResponse <T>{
+public class WebResponse<T>{
     private String code;
     private String msg ;
     private T data ;
@@ -23,6 +23,8 @@ public class  WebResponse <T>{
             e.printStackTrace();
         }
     }
+
+
     public WebResponse() {
         super();
     }
