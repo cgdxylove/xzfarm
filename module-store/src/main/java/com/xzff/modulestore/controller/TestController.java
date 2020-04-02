@@ -20,9 +20,14 @@ public class TestController {
     @RequestMapping("/test")
     @ResponseBody
     public WebResponse test(@RequestParam("id") Integer id){
-         WebResponse webResponse = new WebResponse();
-         webResponse.success("1","666");
-         return webResponse;
+//        try {
+//            Thread.sleep(2*1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        WebResponse webResponse = new WebResponse();
+        webResponse.success("1","666");
+        return webResponse;
     }
 
 

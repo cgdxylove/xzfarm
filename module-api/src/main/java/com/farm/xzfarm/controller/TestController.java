@@ -30,7 +30,7 @@ public class TestController {
 
         @RequestMapping(value = "/test")
         @ResponseBody
-        public WebResponse test(Object o, HttpServletRequest request, Test test) {
+        public WebResponse testRPC(Object o, HttpServletRequest request, Test test) {
 
             WebResponse webResponse =  service.testRPC();
             return webResponse;
@@ -40,7 +40,7 @@ public class TestController {
 
     @RequestMapping(value = "/test1")
     @ResponseBody
-    public long test(Object o, HttpServletRequest request, Test test) {
+    public long testRedis(Object o, HttpServletRequest request, Test test) {
 
         /**
          *
